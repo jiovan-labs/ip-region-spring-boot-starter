@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Unikue Ltd. All rights reserved.
+ * Copyright (c) 2020 Jiovan Ltd. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,25 +14,28 @@
  * limitations under the License.
  */
 
-package cn.unikue.springstarter.ipregion.enumeration;
+package com.jiovan.spring.starter.ipregion.enumeration;
 
 
-import cn.unikue.commonplexus.javaseutil.enumeration.ValueEnum;
+import com.jiovan.plexus.common.toolkit.enumeration.ValueEnum;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 
 /**
- * Enumerations for protocol types of ip2region
+ * Enumerations for outcome types of ip2region
  *
  * @author David Hsing
  */
 @AllArgsConstructor
 @Getter
 @SuppressWarnings("unused")
-public enum IpRegionProtocolType implements ValueEnum<Integer> {
-    v4(4),
-    v6(6);
+public enum IpRegionSegmentType implements ValueEnum<Integer> {
+    COUNTRY(0),
+    AREA(1),
+    PROVINCE(2),
+    CITY(3),
+    ISP(4);
 
     private final Integer value;
 }

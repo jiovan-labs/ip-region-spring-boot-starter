@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Unikue Ltd. All rights reserved.
+ * Copyright (c) 2020 Jiovan Ltd. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package cn.unikue.springstarter.ipregion.composer;
+package com.jiovan.spring.starter.ipregion.composer;
 
 
 import jakarta.annotation.Nonnull;
 import jakarta.annotation.Nullable;
-import cn.unikue.springstarter.ipregion.structure.IpRegionOutcome;
+import com.jiovan.spring.starter.ipregion.structure.IpRegionOutcome;
 
 
 /**

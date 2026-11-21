@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Unikue Ltd. All rights reserved.
+ * Copyright (c) 2020 Jiovan Ltd. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package cn.unikue.springstarter.ipregion;
+package com.jiovan.spring.starter.ipregion;
 
 
 import org.junit.jupiter.api.Assertions;
@@ -22,9 +22,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
-import cn.unikue.commonplexus.javaseutil.util.StackTraceWraps;
-import cn.unikue.springstarter.ipregion.composer.IpRegionResolver;
-import cn.unikue.springstarter.ipregion.config.IpRegionAutoConfiguration;
+import com.jiovan.plexus.common.toolkit.util.StackTraceWraps;
+import com.jiovan.spring.starter.ipregion.composer.IpRegionResolver;
+import com.jiovan.spring.starter.ipregion.config.IpRegionAutoConfiguration;
 import lombok.extern.slf4j.Slf4j;
 
 

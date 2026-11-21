@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Unikue Ltd. All rights reserved.
+ * Copyright (c) 2020 Jiovan Ltd. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package cn.unikue.springstarter.ipregion.property;
+package com.jiovan.spring.starter.ipregion.property;
 
 
 import java.io.Serializable;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import cn.unikue.springstarter.ipregion.config.IpRegionAutoConfiguration;
-import cn.unikue.springstarter.ipregion.enumeration.IpRegionProtocolType;
+import com.jiovan.spring.starter.ipregion.config.IpRegionAutoConfiguration;
+import com.jiovan.spring.starter.ipregion.enumeration.IpRegionProtocolType;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;

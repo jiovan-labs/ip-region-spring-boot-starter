@@ -8,18 +8,18 @@ Spring Boot application integrates `IP2Region` quickly, to provide abilities to 
 
 ```xml
     <dependency>
-        <groupId>cn.unikue.springstarter</groupId>
+        <groupId>com.jiovan.spring.starter</groupId>
         <artifactId>ip-region-spring-boot-starter</artifactId>
         <version>LATEST</version>
     </dependency>
 ```
 
-> By default, this starter will auto take effect, you can turn it off by `spring.ip-region.enabled = false`
+> By default, this starter will auto take effect, you can turn it off by `jiovan.ip-region.enabled = false`
 
-- Configure Spring Boot `application.yml` with prefix `spring.ip-region`
+- Configure Spring Boot `application.yml` with prefix `jiovan.ip-region`
 
 ```yml
-spring:
+jiovan:
     ip-region:
         discard-lan: true
         region-db: 'classpath:/ipaddr/Ip2Region_20240228/ip2region.xdb'
@@ -34,7 +34,7 @@ spring:
 
 ## Document
 
-- Github: https://github.com/unikueltd/ip-region-spring-boot-starter
+- Github: https://github.com/jiovan-labs/ip-region-spring-boot-starter
 - Ip2region github: https://github.com/lionsoul2014/ip2region
 
 ## Requirement
@@ -49,12 +49,12 @@ See the `NOTICE.txt` file for required notices and attributions.
 
 ## Donation
 
-You like this package? Then [donate to us](https://unikue.cn/donation) to support the development.
+You like this package? Then [donate to us](https://jiovan.com/donation) to support the development.
 
 ## Copyright
 
-Beijing Unikue Network Technology Ltd.
+Beijing Jiovan Technology Ltd.
 
 ## Website
 
-- Unikue: https://unikue.cn
+- Jiovan: https://jiovan.com

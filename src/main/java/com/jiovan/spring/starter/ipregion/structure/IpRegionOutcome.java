@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Unikue Ltd. All rights reserved.
+ * Copyright (c) 2020 Jiovan Ltd. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package cn.unikue.springstarter.ipregion.structure;
+package com.jiovan.spring.starter.ipregion.structure;
 
 
 import jakarta.annotation.Nonnull;
@@ -22,8 +22,8 @@ import jakarta.annotation.Nullable;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.CharUtils;
 import org.apache.commons.lang3.StringUtils;
-import cn.unikue.commonplexus.javaseutil.constant.CharVariantConst;
-import cn.unikue.springstarter.ipregion.enumeration.IpRegionSegmentType;
+import com.jiovan.plexus.common.toolkit.constant.CharVariantConst;
+import com.jiovan.spring.starter.ipregion.enumeration.IpRegionSegmentType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -47,6 +47,13 @@ public class IpRegionOutcome {
     private String city;
     private String isp;
 
+    /**
+     * Returns a new {@link IpRegionOutcome} parsed from the given composite region string
+     *
+     * @param composite the composite region string whose segments are separated by the vertical delimiter
+     *
+     * @return a new {@link IpRegionOutcome} populated from the composite string
+     */
     @Nonnull
     public static IpRegionOutcome of(@Nullable String composite) {
         return new IpRegionOutcome(composite);
@@ -67,14 +74,33 @@ public class IpRegionOutcome {
         isp = ArrayUtils.get(outcomes, IpRegionSegmentType.ISP.getValue());
     }
 
+    /**
+     * Returns the composite address of this outcome using the default slash delimiter
+     *
+     * @return the composite address, or {@code null} if no valid address field is present
+     */
     public String getCompositeAddress() {
         return getCompositeAddress(CharVariantConst.SLASH);
     }
 
+    /**
+     * Returns the composite address of this outcome using the given character delimiter
+     *
+     * @param delimiter the character used to separate the address fields
+     *
+     * @return the composite address, or {@code null} if no valid address field is present
+     */
     public String getCompositeAddress(char delimiter) {
         return getCompositeAddress(CharUtils.toString(delimiter));
     }
 
+    /**
+     * Returns the composite address of this outcome joined from the valid country, province and city fields
+     *
+     * @param delimiter the string inserted between adjacent address fields, may be {@code null} to concatenate without a separator
+     *
+     * @return the composite address, or {@code null} if no valid address field is present
+     */
     public String getCompositeAddress(@Nullable String delimiter) {
         StringBuilder builder = new StringBuilder();
         if (isValidField(country)) {

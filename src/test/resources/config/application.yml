@@ -1,9 +1,9 @@
 # IP Region for Spring Boot Starter
-# Copyright (c) 2020 Unikue Ltd. All rights reserved.
-# https://unikue.cn
+# Copyright (c) 2020 Jiovan Ltd. All rights reserved.
+# https://jiovan.com
 
 
-spring:
+jiovan:
     ip-region:
         discard-lan: true
         region-db: 'classpath:/ipaddr/Ip2Region_20260429/ip2region_v4.xdb'

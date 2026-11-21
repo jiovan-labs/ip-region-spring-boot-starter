@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Unikue Ltd. All rights reserved.
+ * Copyright (c) 2020 Jiovan Ltd. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,17 +14,17 @@
  * limitations under the License.
  */
 
-package cn.unikue.springstarter.ipregion;
+package com.jiovan.spring.starter.ipregion;
 
 
-import jakarta.annotation.Nullable;
+import jakarta.annotation.Nonnull;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
 class MockApplicationInitializer {
-    public static void main(@Nullable String[] args) {
+    public static void main(@Nonnull String[] args) {
         SpringApplication.run(MockApplicationInitializer.class, args);
     }
 }

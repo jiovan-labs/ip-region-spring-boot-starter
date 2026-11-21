@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Unikue Ltd. All rights reserved.
+ * Copyright (c) 2020 Jiovan Ltd. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package cn.unikue.springstarter.ipregion.config;
+package com.jiovan.spring.starter.ipregion.config;
 
 
 import java.io.ByteArrayOutputStream;
@@ -35,28 +35,36 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
 import org.springframework.util.FileCopyUtils;
-import cn.unikue.commonplexus.springutil.util.ResourceUtilsWraps;
-import cn.unikue.springstarter.ipregion.composer.IpRegionResolver;
-import cn.unikue.springstarter.ipregion.composer.impl.DefaultIpRegionResolver;
-import cn.unikue.springstarter.ipregion.enumeration.IpRegionProtocolType;
-import cn.unikue.springstarter.ipregion.property.IpRegionProperties;
+import com.jiovan.plexus.spring.toolkit.util.ResourceUtilsWraps;
+import com.jiovan.spring.starter.ipregion.composer.IpRegionResolver;
+import com.jiovan.spring.starter.ipregion.composer.impl.DefaultIpRegionResolver;
+import com.jiovan.spring.starter.ipregion.enumeration.IpRegionProtocolType;
+import com.jiovan.spring.starter.ipregion.property.IpRegionProperties;
 
 
 /**
  * Configuration for ip2region
  *
  * @author David Hsing
- * @reference "https://github.com/hiwepy/ip2region-spring-boot-starter"
+ * @see "https://github.com/hiwepy/ip2region-spring-boot-starter"
  */
 @Configuration(proxyBeanMethods = false)
 @ConditionalOnBooleanProperty(prefix = IpRegionAutoConfiguration.PROPERTIES_PREFIX, name = "enabled", matchIfMissing = true)
 @EnableConfigurationProperties(value = IpRegionProperties.class)
-@SuppressWarnings({"JavadocDeclaration", "JavadocLinkAsPlainText"})
 public class IpRegionAutoConfiguration {
-    public static final String PROPERTIES_PREFIX = "spring.ip-region";    // $NON-NLS-1$
+    public static final String PROPERTIES_PREFIX = "jiovan.ip-region";    // $NON-NLS-1$
     public static final String REGION_SEARCHER = "ipRegionSearcher";    // $NON-NLS-1$
     public static final String REGION_RESOLVER = "ipRegionResolver";    // $NON-NLS-1$
 
+    /**
+     * Returns an {@link org.lionsoul.ip2region.xdb.Searcher} backed by the configured region database loaded into memory
+     *
+     * @param properties the IP region properties providing the region database resource and protocol version
+     *
+     * @return a {@link org.lionsoul.ip2region.xdb.Searcher} created from the in-memory region database, or {@code null} if the database cannot be read
+     *
+     * @throws java.io.IOException if the configured region database does not exist or is unreadable
+     */
     @Bean(name = REGION_SEARCHER)
     @ConditionalOnMissingBean(name = REGION_SEARCHER)
     @ConditionalOnProperty(prefix = PROPERTIES_PREFIX, name = "region-db")
@@ -76,6 +84,14 @@ public class IpRegionAutoConfiguration {
         return null;
     }
 
+    /**
+     * Returns an {@link com.jiovan.spring.starter.ipregion.composer.IpRegionResolver} that resolves IP regions using the given searcher
+     *
+     * @param searcher the searcher used to look up IP region data
+     * @param properties the IP region properties controlling whether LAN addresses are discarded
+     *
+     * @return a default {@link com.jiovan.spring.starter.ipregion.composer.IpRegionResolver} wrapping the given searcher
+     */
     @Bean(name = REGION_RESOLVER)
     @ConditionalOnMissingBean(name = REGION_RESOLVER)
     @ConditionalOnBean(name = REGION_SEARCHER)

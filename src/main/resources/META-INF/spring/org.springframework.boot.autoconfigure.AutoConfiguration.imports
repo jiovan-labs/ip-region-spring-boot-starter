@@ -1,5 +1,5 @@
 # IP Region for Spring Boot Starter
-# Copyright (c) 2020 Unikue Ltd. All rights reserved.
-# https://unikue.cn
+# Copyright (c) 2020 Jiovan Ltd. All rights reserved.
+# https://jiovan.com
 
-cn.unikue.springstarter.ipregion.config.IpRegionAutoConfiguration
+com.jiovan.spring.starter.ipregion.config.IpRegionAutoConfiguration

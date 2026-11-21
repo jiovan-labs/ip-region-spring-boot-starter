@@ -1,6 +1,6 @@
 IP Region for Spring Boot Starter
-Copyright (c) 2020 Unikue Ltd. All rights reserved.
-https://unikue.cn
+Copyright (c) 2020 Jiovan Ltd. All rights reserved.
+https://jiovan.com
 
 ip2region
 author lionsoul2014
