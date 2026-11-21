@@ -46,6 +46,7 @@ import com.jiovan.spring.starter.ipregion.property.IpRegionProperties;
  * Configuration for ip2region
  *
  * @author David Hsing
+ *
  * @see "https://github.com/hiwepy/ip2region-spring-boot-starter"
  */
 @Configuration(proxyBeanMethods = false)

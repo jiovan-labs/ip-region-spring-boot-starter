@@ -32,6 +32,7 @@ import lombok.AllArgsConstructor;
  * Composer implementation for ip2region searcher
  *
  * @author David Hsing
+ *
  * @see "org.lionsoul.ip2region.Ip2regionSearcher"
  */
 @AllArgsConstructor
