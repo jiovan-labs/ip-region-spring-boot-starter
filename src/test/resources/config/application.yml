@@ -6,5 +6,5 @@
 jiovan:
     ip-region:
         discard-lan: true
-        region-db: 'classpath:/ipaddr/Ip2Region_20260429/ip2region_v4.xdb'
+        region-db: 'classpath:/ipaddr/Ip2Region_20261122/ip2region_v4.xdb'
         protocol: v4
